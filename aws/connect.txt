@@ -1,0 +1,14 @@
+#1. Connecting to ec2 instance
+mkdir ~/.ec2
+chmod 700 ~/.ec2
+Copy itversity.pem to ~/.ec2
+Make sure permission on directory is 700
+Make sure permission on itversity.pem is 400
+
+Run following command to connect to ec2 instance which is running www.itversity.com
+ssh -i ~/.ec2/itversity.pem ec2-user@ec2-52-0-11-138.compute-1.amazonaws.com
+
+#2. Connecting to Mongo and seeing details
+mongo
+use itv_metrics;
+db.itv_visits.find().pretty()
